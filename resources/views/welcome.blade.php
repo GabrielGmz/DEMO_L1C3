@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <title>Bienvenido a ReserPlace</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
         body {
             font-family: sans-serif;
             text-align: center;
             padding: 50px;
+            background-color: #000000;
+            color: #ffffff;
         }
         h1 { font-size: 2em; }
         a {

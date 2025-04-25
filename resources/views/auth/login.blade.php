@@ -1,4 +1,4 @@
-<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #f3f4f6; background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/double-bubble-outline.png');">
+<div style="min-height: 90vh; display: flex; align-items: center; justify-content: center; background-color: #ffffff;">
     <div style="background-color: #ffffff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 0.5rem; padding: 2rem; width: 100%; max-width: 28rem;">
         <h2 style="font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem;">Iniciar sesión</h2>
         <form method="POST" action="{{ route('login.submit') }}">
