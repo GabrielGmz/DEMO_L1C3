@@ -40,5 +40,8 @@ Route::get('/propiedades/crear', [PropiedadController::class, 'create'])->name('
 Route::post('/propiedades', [PropiedadController::class, 'store'])->name('propiedades.store');
 
 // Reservas
+Route::get('/reservas', [ReservaController::class, 'index'])->name('reservas.index');
 Route::get('/reservar/{id}', [ReservaController::class, 'create'])->name('reservas.create');
 Route::post('/reservar/{id}', [ReservaController::class, 'store'])->name('reservas.store');
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout.submit');

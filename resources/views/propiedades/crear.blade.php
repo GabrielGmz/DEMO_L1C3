@@ -1,3 +1,6 @@
+@extends('layouts.app') <!-- Replace 'layouts.app' with the path to your layout -->
+
+@section('content')
 <form method="POST" action="{{ route('propiedades.store') }}">
     @csrf
     <input name="titulo" placeholder="Título">
@@ -10,3 +13,4 @@
     </select>
     <button type="submit">Guardar propiedad</button>
 </form>
+@endsection

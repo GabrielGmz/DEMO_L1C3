@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Propietario extends Model
 {
-    //
+    // Add [id_user] to fillable property to allow mass assignment on [App\Models\Propietario].
+    protected $fillable = [
+        'id_user',
+        'titulo',
+        'descripción',
+        'precio_por_noche',
+        'capacidad',
+        'estado'
+    ];
 }

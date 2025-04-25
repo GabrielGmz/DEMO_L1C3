@@ -16,7 +16,7 @@ class PropiedadController extends Controller
         if (session('user')->rol !== 'propietario') {
             return redirect()->route('dashboard')->withErrors('Acceso no autorizado.');
         }
-        return view('propiedades.create');
+        return view('propiedades.crear');
     }
 
     public function store(Request $request) {
