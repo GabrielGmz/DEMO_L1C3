@@ -6,10 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Login extends Model
 {
-    // Asegúrate de declarar el nombre de la tabla si no es 'logins'
     protected $table = 'login';
 
-    // Campos que pueden llenarse masivamente
     protected $fillable = [
         'nombre',
         'email',
@@ -17,7 +15,6 @@ class Login extends Model
         'rol',
     ];
 
-    // Relaciones
     public function propiedades()
     {
         return $this->hasMany(Propietario::class, 'id_user');
@@ -25,6 +22,6 @@ class Login extends Model
 
     public function reservas()
     {
-        return $this->hasMany(Reserva::class, 'id_user'); // estaba mal como 'id_use'
+        return $this->hasMany(Reserva::class, 'id_user');
     }
 }

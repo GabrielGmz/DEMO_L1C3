@@ -4,8 +4,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
-    <body>
-        <nav style="background-color: #2d3748; padding: 16px; color: white; display: flex; justify-content: space-between; align-items: center;">
+    <body style= "box-sizing: border-box; font-family: sans-serif; margin: 0; padding: 0; background-color: #000000; color:white;">
+        <nav style="background-color: #005eff; padding: 16px; color: white; display: flex; justify-content: space-between; align-items: center;">
             <div style="font-size: 1.125rem; font-weight: bold;">
                 RESERPLACE
             </div>

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Bienvenido a LaravelBnB</title>
+    <title>Bienvenido a ReserPlace</title>
     <style>
         body {
             font-family: sans-serif;
@@ -25,8 +25,8 @@
     </style>
 </head>
 <body>
-    <h1>Bienvenido a LaravelBnB 🏠</h1>
-    <p>Plataforma de reservas tipo Airbnb hecha en Laravel 12</p>
+    <h1>Bienvenido a RESERPLACE 🏠</h1>
+    <p>Plataforma de reservas</p>
 
     <a href="{{ route('login') }}">Iniciar Sesión</a>
     <a href="{{ route('register') }}">Registrarse</a>
