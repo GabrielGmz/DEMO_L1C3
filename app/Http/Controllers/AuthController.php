@@ -47,10 +47,10 @@ class AuthController extends Controller
             Session::put('user', $user);
 
             if ($user->rol === 'propietario') {
-                return redirect()->route('propiedades.create');
+                return redirect()->route('propiedades.index');
             }
 
-            return redirect()->route('propiedades.index'); 
+            return redirect()->route('propiedades.index');
         }
 
         return back()->withErrors(['email' => 'Credenciales incorrectas']);

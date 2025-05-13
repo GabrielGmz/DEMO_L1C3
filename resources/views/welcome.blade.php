@@ -9,8 +9,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         html {
-            height: 100vh;
+            height: 90vh;
             justify-content: center;
             align-items: center;
             display: flex;
@@ -32,9 +33,10 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            transition: .4s ease;
         }
         a:hover {
-            background-color: #2779bd;
+            background-color: #0d0083;
         }
     </style>
 </head>
