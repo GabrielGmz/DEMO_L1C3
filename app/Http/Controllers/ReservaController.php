@@ -104,8 +104,6 @@ class ReservaController extends Controller
         return redirect()->route('reservas.index')->with('success', 'Reserva cancelada.');
     }
 
-    // NUEVOS MÉTODOS PARA ACEPTAR Y RECHAZAR
-
     public function aceptar($id)
     {
         $reserva = Reserva::findOrFail($id);

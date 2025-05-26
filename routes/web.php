@@ -27,7 +27,6 @@ Route::get('/reservas', [ReservaController::class, 'index'])->name('reservas.ind
 Route::get('/reservar/{id}', [ReservaController::class, 'create'])->name('reservas.create');
 Route::post('/reservar/{id}', [ReservaController::class, 'store'])->name('reservas.store');
 
-// Nuevas rutas:
 Route::get('/reservas/{id}/editar', [ReservaController::class, 'edit'])->name('reservas.edit');
 Route::put('/reservas/{id}', [ReservaController::class, 'update'])->name('reservas.update');
 Route::delete('/reservas/{id}', [ReservaController::class, 'destroy'])->name('reservas.destroy');
