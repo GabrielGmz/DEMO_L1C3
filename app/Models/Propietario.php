@@ -14,4 +14,9 @@ class Propietario extends Model
         'capacidad',
         'estado'
     ];
+
+    public function reservas()
+    {
+        return $this->hasMany(Reserva::class, 'id_propiedad');
+    }
 }

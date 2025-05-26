@@ -9,6 +9,9 @@
             <div style="font-size: 1.125rem; font-weight: bold;">
                 RESERPLACE
             </div>
+            <div style="display: flex; gap: 20px;">
+                <a href="{{ route('propiedades.index') }}" style="color: white; text-decoration: none; font-weight: bold; justify-content: center; align-items:center; align-content:center;">Propiedades</a>
+                <a href="{{ route('reservas.index') }}" style="color: white; text-decoration: none; font-weight: bold; justify-content: center; align-items:center; align-content:center;">Reservas</a>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" style="background-color: #f56565; color: white; font-weight: bold; padding: 8px 16px; border-radius: 4px; border: none; cursor: pointer;"
