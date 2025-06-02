@@ -24,53 +24,55 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.9rem;
+            padding: 20px;
         }
 
         .card {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.08);
             padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             width: 100%;
-            max-width: 320px;
+            max-width: 400px;
         }
 
         h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
             text-align: center;
             margin-bottom: 1.5rem;
+            font-size: 1.5rem;
         }
 
         label {
             display: block;
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             font-weight: 500;
-            color: white;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.4rem;
         }
 
         input, select {
-            display: block;
             width: 100%;
-            padding: 0.5rem 0.75rem;
-            border: 1px solid #d1d5db;
-            border-radius: 0.375rem;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-            outline: none;
-            margin-bottom: 1rem;
+            padding: 0.6rem 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid #818cf8;
+            background-color: #1e1e1e;
+            color: white;
+            margin-bottom: 1.2rem;
+        }
+
+        input::placeholder {
+            color: #aaa;
         }
 
         button {
             width: 100%;
             background-color: #4f46e5;
-            color: #ffffff;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
+            color: white;
+            padding: 0.6rem;
             border: none;
-            cursor: pointer;
-            font-weight: 500;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
         }
 
         button:hover {
@@ -79,10 +81,18 @@
 
         .link {
             text-align: center;
-            margin-top: 1rem;
-            color: #4f46e5;
-            text-decoration: underline;
+            margin-top: 1.2rem;
             font-size: 0.875rem;
+        }
+
+        .link a {
+            color: #818cf8;
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+
+        .link a:hover {
+            color: #a5b4fc;
         }
     </style>
 </head>
@@ -94,16 +104,16 @@
                 @csrf
 
                 <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
 
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="email" name="email" id="email" placeholder="Email" required>
 
                 <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password" placeholder="Contraseña">
+                <input type="password" name="password" id="password" placeholder="Contraseña" required>
 
                 <label for="rol">Rol</label>
-                <select name="rol" id="rol">
+                <select name="rol" id="rol" required>
                     <option value="cliente">Cliente</option>
                     <option value="propietario">Propietario</option>
                 </select>

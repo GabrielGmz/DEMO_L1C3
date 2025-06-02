@@ -7,14 +7,35 @@ use App\Models\Propietario;
 
 class PropiedadController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
         $user = session('user');
+        $query = Propietario::query();
+
 
         if ($user && $user->rol === 'propietario') {
-            $propiedades = Propietario::where('id_user', $user->id)->get();
-        } else {
-            $propiedades = Propietario::all();
+            $query->where('id_user', $user->id);
         }
+
+
+        if ($request->filled('busqueda')) {
+            $busqueda = $request->input('busqueda');
+            $query->where(function ($q) use ($busqueda) {
+                $q->where('titulo', 'like', "%$busqueda%")
+                  ->orWhere('descripción', 'like', "%$busqueda%");
+            });
+        }
+
+
+        if ($request->filled('precio_min')) {
+            $query->where('precio_por_noche', '>=', $request->input('precio_min'));
+        }
+
+
+        if ($request->filled('precio_max')) {
+            $query->where('precio_por_noche', '<=', $request->input('precio_max'));
+        }
+
+        $propiedades = $query->get();
 
         return view('propiedades.index', compact('propiedades'));
     }
