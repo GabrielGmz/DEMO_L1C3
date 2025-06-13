@@ -16,6 +16,8 @@
             <ul style="list-style: none; padding: 0;">
                 @foreach($reservas as $reserva)
                     <li style="background-color: rgba(255, 255, 255, 0.06); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; color: #fff;">
+                        <img src="{{  asset('storage/' . $reserva->propiedad->imagen_url) }}" alt="Imagen de la propiedad"
+                             style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 1rem;">
                         <h3 style="margin-bottom: 10px; color: #ffffff;">{{ $reserva->propiedad->titulo }}</h3>
                         <p><strong>Inicio:</strong> {{ $reserva->fecha_inicio }}</p>
                         <p><strong>Fin:</strong> {{ $reserva->fecha_fin }}</p>

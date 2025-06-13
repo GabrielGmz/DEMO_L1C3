@@ -79,7 +79,7 @@
 <div class="crear-container">
     <div class="crear-form-wrapper">
         <h1>Crear Propiedad</h1>
-        <form method="POST" action="{{ route('propiedades.store') }}">
+        <form method="POST" action="{{ route('propiedades.store') }}" enctype="multipart/form-data">
             @csrf
 
             <input type="text" name="titulo" placeholder="Título" required>
@@ -95,6 +95,8 @@
                 <option value="disponible">Disponible</option>
                 <option value="no disponible">No Disponible</option>
             </select>
+
+            <input type="file" name="imagen_url" accept="image/png" required>
 
             <button type="submit">Guardar propiedad</button>
         </form>

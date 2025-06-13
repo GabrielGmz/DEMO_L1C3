@@ -12,7 +12,8 @@ class Propietario extends Model
         'descripción',
         'precio_por_noche',
         'capacidad',
-        'estado'
+        'estado',
+        'imagen_url'
     ];
 
     public function reservas()

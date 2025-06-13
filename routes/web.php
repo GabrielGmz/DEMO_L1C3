@@ -30,8 +30,9 @@ Route::post('/reservar/{id}', [ReservaController::class, 'store'])->name('reserv
 Route::get('/reservas/{id}/editar', [ReservaController::class, 'edit'])->name('reservas.edit');
 Route::put('/reservas/{id}', [ReservaController::class, 'update'])->name('reservas.update');
 Route::delete('/reservas/{id}', [ReservaController::class, 'destroy'])->name('reservas.destroy');
-Route::get('/reservas/propietarios', [ReservaController::class, 'propietarioReservas'])->name('reservas.propietarios');
+Route::get('/reservas/propietarios', [ReservaController::class, 'propietarioReservas'])->name('reservas.propietario');
 
 Route::post('/reservas/{id}/aceptar', [ReservaController::class, 'aceptar'])->name('reservas.aceptar');
 Route::post('/reservas/{id}/rechazar', [ReservaController::class, 'rechazar'])->name('reservas.rechazar');
+
 

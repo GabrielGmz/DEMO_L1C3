@@ -33,6 +33,18 @@
             gap: 20px;
             align-items: center;
         }
+        nav .links .tabs {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            nav .links {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
 
         nav a {
             color: white;
@@ -73,8 +85,10 @@
     <nav>
         <div class="logo">RESERPLACE</div>
         <div class="links">
+            <div class="tabs">
             <a href="{{ route('propiedades.index') }}">Propiedades</a>
             <a href="{{ route('reservas.index') }}">Reservas</a>
+            </div>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit">Logout</button>

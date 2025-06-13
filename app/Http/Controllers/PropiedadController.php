@@ -51,31 +51,41 @@ class PropiedadController extends Controller
     }
 
     public function store(Request $request) {
-        $user = session('user');
+    $user = session('user');
 
-        if (!$user || $user->rol !== 'propietario') {
-            return redirect()->route('propiedades.index')->withErrors('Acceso no autorizado.');
-        }
-
-        $request->validate([
-            'titulo' => 'required',
-            'descripción' => 'required',
-            'precio_por_noche' => 'required|integer',
-            'capacidad' => 'required|integer',
-            'estado' => 'required'
-        ]);
-
-        Propietario::create([
-            'id_user' => $user->id,
-            'titulo' => $request->titulo,
-            'descripción' => $request->descripción,
-            'precio_por_noche' => $request->precio_por_noche,
-            'capacidad' => $request->capacidad,
-            'estado' => $request->estado
-        ]);
-
-        return redirect()->route('propiedades.index')->with('success', 'Propiedad agregada.');
+    if (!$user || $user->rol !== 'propietario') {
+        return redirect()->route('propiedades.index')->withErrors('Acceso no autorizado.');
     }
+
+    $request->validate([
+        'titulo' => 'required',
+        'descripción' => 'required',
+        'precio_por_noche' => 'required|integer',
+        'capacidad' => 'required|integer',
+        'estado' => 'required',
+        'imagen_url' => 'required|image|max:2048', // max 2MB
+    ]);
+
+    // Guardar imagen
+    $rutaImagen = null;
+    if ($request->hasFile('imagen_url')) {
+        $ruta = $request->file('imagen_url')->store('imagenes', 'public');
+        $rutaImagen = $request->file('imagen_url')->store('imagenes', 'public'); // guarda en storage/app/public/imagenes
+$urlImagen = 'storage/' . $rutaImagen;
+    }
+
+    Propietario::create([
+        'id_user' => $user->id,
+        'titulo' => $request->titulo,
+        'descripción' => $request->descripción,
+        'precio_por_noche' => $request->precio_por_noche,
+        'capacidad' => $request->capacidad,
+        'estado' => $request->estado,
+        'imagen_url' => $rutaImagen,
+    ]);
+
+    return redirect()->route('propiedades.index')->with('success', 'Propiedad agregada.');
+}
 
     public function destroy($id) {
         $user = session('user');

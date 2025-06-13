@@ -104,6 +104,20 @@ class ReservaController extends Controller
         return redirect()->route('reservas.index')->with('success', 'Reserva cancelada.');
     }
 
+    public function propietarioReservas()
+    {
+        $user = session('user');
+
+        if ($user->rol !== 'propietario') {
+            return redirect()->route('reservas.index')->withErrors('Acceso no autorizado.');
+        }
+
+        $reservas = Reserva::whereIn('id_propiedad', $user->propiedades->pluck('id'))
+            ->with(['propiedad', 'user'])
+            ->get();
+
+        return view('reservas.propietario', compact('user', 'reservas'));
+    }
     public function aceptar($id)
     {
         $reserva = Reserva::findOrFail($id);

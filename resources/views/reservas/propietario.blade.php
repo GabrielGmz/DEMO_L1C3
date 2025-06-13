@@ -16,6 +16,7 @@
             <ul style="list-style: none; padding: 0;">
                 @foreach($reservas as $reserva)
                     <li style="background-color: rgba(255, 255, 255, 0.06); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; color: #fff;">
+
                         <h3 style="margin-bottom: 10px;">{{ $reserva->propiedad->titulo ?? 'Propiedad eliminada' }}</h3>
                         <p><strong>Reservado por:</strong> {{ $reserva->user->nombre ?? 'Usuario eliminado' }}</p>
                         <p><strong>Inicio:</strong> {{ $reserva->fecha_inicio }}</p>
